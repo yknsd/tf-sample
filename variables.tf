@@ -13,3 +13,12 @@ variable "project_name" {
   default = ""
 }
 
+variable "app_engine_source_url" {
+  type = string
+  default = ""
+}
+
+variable "cloud_storage_bucket_name" {
+  type = string
+  default = "sample-bucket"
+}
