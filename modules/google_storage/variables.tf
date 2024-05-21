@@ -15,3 +15,8 @@ variable "storage_class" {
   type = string
   default = "STANDARD"
 }
+
+variable "default_bucket_acl" {
+  type = string
+  default = "projectPrivate"
+}
