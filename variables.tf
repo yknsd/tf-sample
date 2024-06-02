@@ -1,6 +1,6 @@
 variable "project_id" {
   type = string
-  default = ""
+  sensitive = true
 }
 
 variable "region" {
@@ -10,15 +10,20 @@ variable "region" {
 
 variable "project_name" {
   type = string
-  default = ""
+  sensitive = true
+}
+
+variable "billing_account" {
+  type = string
+  sensitive = true
 }
 
 variable "app_engine_source_url" {
   type = string
-  default = ""
+  sensitive = true
 }
 
 variable "cloud_storage_bucket_name" {
   type = string
-  default = "sample-bucket"
+  sensitive = true
 }

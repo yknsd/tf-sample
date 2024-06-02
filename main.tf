@@ -2,6 +2,7 @@ terraform {
   required_providers {
     google = {
       source = "hashicorp/google"
+      version = "~> 5.0.0"
     }
   }
 }
@@ -12,19 +13,26 @@ provider "google" {
 }
 
 resource "google_project" "sample_project" {
+  project_id = var.project_id
   name = var.project_name
+  billing_account = var.billing_account
+}
+
+module "compute_engine" {
+  source = "./modules/compute_engine"
+
   project_id = var.project_id
 }
 
-module "app_engine" {
-  source = "./modules/google_app_engine"
-
-  project_id = var.project_id
-  project_name = var.project_name
-  region = var.region
-
-  source_url = var.app_engine_source_url
-}
+//module "app_engine" {
+//  source = "./modules/google_app_engine"
+//
+//  project_id = var.project_id
+//  project_name = var.project_name
+//  region = var.region
+//
+//  source_url = var.app_engine_source_url
+//}
 
 module "cloud_storage" {
   source = "./modules/google_storage"
