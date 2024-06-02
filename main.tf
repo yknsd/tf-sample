@@ -41,3 +41,21 @@ module "cloud_storage" {
   region = var.region
   bucket_name = var.cloud_storage_bucket_name
 }
+
+//module "cloud_kms" {
+//  source = "./modules/cloud_kms"
+//
+//  project_id = var.project_id
+//}
+
+//module "cloud_pub_sub" {
+//  source = "./modules/cloud_pub_sub"
+//
+//  project_id = var.project_id
+//}
+
+//module "cloud_tasks" {
+//  source = "./modules/cloud_tasks"
+//
+//  project_id = var.project_id
+//}
